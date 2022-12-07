@@ -18,6 +18,8 @@ calc.grid()
 
 # Class with all functions of the scientific calculator
 
+txtDisplay = []
+
 class Calc():
     def __init__(self):
         self.total=0
