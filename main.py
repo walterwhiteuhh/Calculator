@@ -25,5 +25,19 @@ class Calc():
         self.op=''
         self.result=False
 
+    def numberEnter(self, num):
+        self.result = False
+        firstnum = txtDisplay.get()
+        secondnum = str(num)
+        if self.input_value:
+            self.current = secondnum
+            self.input_value = False
+        else:
+            if secondnum == '.':
+                if secondnum in firstnum:
+                    return
+            self.current = firstnum+secondnum
+        self.display(self.current)
+
 
 root.mainloop()
