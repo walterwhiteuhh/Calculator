@@ -4,6 +4,7 @@ from tkinter import *
 import math
 import tkinter.messagebox
 
+# Set the basic parameters of the calculator window
 
 root = Tk()
 root.title("Scientific Calculator")
@@ -15,6 +16,7 @@ calc = Frame(root)
 
 calc.grid()
 
+# Class with all functions of the scientific calculator
 
 class Calc():
     def __init__(self):
