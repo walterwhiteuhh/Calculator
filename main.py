@@ -1,43 +1,22 @@
-# Import modules
+def scientific_calculator():
+  # Print a welcome message
+  print("Welcome to the scientific calculator!")
+  
+  # Loop until the user enters "q" to quit
+  while True:
+    # Get the user's input
+    expression = input("Enter an expression (or 'q' to quit): ")
+    
+    # If the user wants to quit, break out of the loop
+    if expression.lower() == "q":
+      break
+    
+    # Try to evaluate the expression using Python's built-in eval function
+    try:
+      result = eval(expression)
+      print(f"Result: {result}")
+    except:
+      print("Invalid expression. Please try again.")
 
-from tkinter import *
-import math
-import tkinter.messagebox
-
-
-root = Tk()
-root.title("Scientific Calculator")
-root.configure(background = 'white')
-root.resizable(width=False, height=False)
-root.geometry("480x568+450+90")
-
-calc = Frame(root)
-
-calc.grid()
-
-
-class Calc():
-    def __init__(self):
-        self.total=0
-        self.current=''
-        self.input_value=True
-        self.check_sum=False
-        self.op=''
-        self.result=False
-
-    def numberEnter(self, num):
-        self.result = False
-        firstnum = txtDisplay.get()
-        secondnum = str(num)
-        if self.input_value:
-            self.current = secondnum
-            self.input_value = False
-        else:
-            if secondnum == '.':
-                if secondnum in firstnum:
-                    return
-            self.current = firstnum+secondnum
-        self.display(self.current)
-
-
-root.mainloop()
+# Call the calculator function to start the program
+scientific_calculator()
