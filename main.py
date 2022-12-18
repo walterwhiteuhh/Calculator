@@ -1,4 +1,5 @@
-<<<<<<< HEAD
+import math
+
 def scientific_calculator():
   # Print a welcome message
   print("Welcome to the scientific calculator!")
@@ -14,13 +15,10 @@ def scientific_calculator():
     
     # Try to evaluate the expression using Python's built-in eval function
     try:
-      result = eval(expression)
+      result = eval(expression, {"__builtins__": None}, {"sqrt": math.sqrt, "sin": math.sin, "cos": math.cos, "tan": math.tan})
       print(f"Result: {result}")
     except:
       print("Invalid expression. Please try again.")
 
 # Call the calculator function to start the program
 scientific_calculator()
-=======
-
->>>>>>> a32ba4e5b4b68ef662565537203f98ed90fe7d9d
