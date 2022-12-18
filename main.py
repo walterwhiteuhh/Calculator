@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 def scientific_calculator():
   # Print a welcome message
   print("Welcome to the scientific calculator!")
@@ -20,3 +21,6 @@ def scientific_calculator():
 
 # Call the calculator function to start the program
 scientific_calculator()
+=======
+
+>>>>>>> a32ba4e5b4b68ef662565537203f98ed90fe7d9d
