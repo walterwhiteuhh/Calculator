@@ -1,24 +1,41 @@
 import math
+import tkinter as tk
 
-def scientific_calculator():
-  # Print a welcome message
-  print("Welcome to the scientific calculator!")
-  
-  # Loop until the user enters "q" to quit
-  while True:
-    # Get the user's input
-    expression = input("Enter an expression (or 'q' to quit): ")
-    
-    # If the user wants to quit, break out of the loop
-    if expression.lower() == "q":
-      break
-    
-    # Try to evaluate the expression using Python's built-in eval function
+class ScientificCalculator:
+  def __init__(self, window):
+    self.window = window
+    self.window.title("Scientific Calculator")
+
+    # Create the entry field
+    self.entry = tk.Entry(window, width=30)
+    self.entry.pack()
+
+    # Create the calculate button
+    self.calculate_button = tk.Button(window, text="Calculate", command=self.calculate_expression)
+    self.calculate_button.pack()
+
+    # Create the result label
+    self.result_label = tk.Label(window, text="")
+    self.result_label.pack()
+
+  def calculate_expression(self):
+    expression = self.entry.get()
     try:
       result = eval(expression, {"__builtins__": None}, {"sqrt": math.sqrt, "sin": math.sin, "cos": math.cos, "tan": math.tan})
-      print(f"Result: {result}")
+      self.result_label.config(text=f"Result: {result}")
     except:
-      print("Invalid expression. Please try again.")
+      self.result_label.config(text="Invalid expression. Please try again.")
 
-# Call the calculator function to start the program
-scientific_calculator()
+  def run(self):
+    # Start the main loop
+    self.window.mainloop()
+
+if __name__ == "__main__":
+  # Create the main window
+  window = tk.Tk()
+
+  # Create an instance of the ScientificCalculator class
+  calculator = ScientificCalculator(window)
+
+  # Run the calculator
+  calculator.run()
